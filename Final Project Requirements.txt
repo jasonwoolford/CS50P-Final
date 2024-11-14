@@ -47,7 +47,7 @@ Also fill out this form: https://forms.cs50.io/5e2dd8e8-3c8b-4eb2-b77d-085836253
 
 Step 2 of 3:
 
-Create a README.md text file in the ~/project folder that explains your project.  This file should include your project title, \
+Create a README.md text file in the ~/project folder that explains your project.  This file should include your project title, 
 the URL of your video (created in step 1 above) and a description of your project.
 
 Here's a template:
