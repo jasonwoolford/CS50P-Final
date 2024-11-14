@@ -1,0 +1,71 @@
+#Copied from the Final Project page on the CS50P site
+
+1) Your project must be implemeneted in Python
+
+2) Your project must have a main() function and three or more additional functions. At least three of those additional functions must be accompanied by tests that can be executed with pytest.
+    2.1) Your main function must be in a file called project.py and defined at the same indentation level as main 
+        (i.e., not nested under any classes or functions)
+
+    2.2) Your test functions must be in a file called test_project.py which should also be in the "root" of your project.  
+        Be sure they have the same name as your custom functions, prepended with "test_".
+
+    2.3) You are welcome to implement additional classes and functions as you see fit beyond the minimum requirement.
+
+3) Implementing your porject should entail more time and effort than is required by each of the course's problem sets.
+
+4) Any pip-installable libraries that your project requires must be listed, one per line, in a filed called requirements.txt in the root of your project.
+
+
+
+#"Getting Started"
+
+"Creating an entire project may seem daunting.  Here are some questions that you should think about as you start:
+
+1) What will your software do?  What features will it have?  How will it be executed?
+
+2) What new skills will you need to acquire?  What topics will you need to research?
+
+3) If working with one or two classmates, who will do what?
+
+4) In the world of software, most everything takes longer to implement than you expect.  And so it's not uncommon to accomplish less in a fixed amount
+    of time than you hope.  What might you consider to be a good outcome for your project?  A better outcome?  The best outcome?
+
+
+#"How to submit"
+
+Step 1 of 3:
+
+Create a short video (that's no more than 3 minutes in length) in which you present your project to the world.  Your video must begin with an opening section that displays:
+
+- Your project's title;
+- Your name;
+- Your GitHub and edX usernames;
+- Your city and country;
+- The date you have recorded this video.
+
+Also fill out this form: https://forms.cs50.io/5e2dd8e8-3c8b-4eb2-b77d-085836253f26
+
+Step 2 of 3:
+
+Create a README.md text file in the ~/project folder that explains your project.  This file should include your project title, \
+the URL of your video (created in step 1 above) and a description of your project.
+
+Here's a template:
+# PROJECT TITLE 
+## VIDEO DEMO: <URL>
+## DESCRIPTION: 
+TODO
+
+If unfamiliar with Markdown syntax, you might find GitHub's Basic Writing and Formatting Syntax(https://docs.github.com/en/free-pro-team@latest/github/writing-on-github/basic-writing-and-formatting-syntax)
+helpful.  If you are using CS50 Codespace and are prompted to "Open in CS50 Lab", you can simply press cancel to open in the Editor.  You can also 
+preview preview your .md file by clicking the 'preview' icon as explained here: https://code.visualstudio.com/docs/languages/markdown#_markdown-preview
+Standard software project README's can often run into the thousands or tends of thousands of words in length; yours need not be that long, but should
+at least be several hundred words that describe things in detail.
+
+(Your README.md file should be minimally multiple paragraphs in length, and should explain what your project is, what each of the files you wrote for the project contains and does, and if you debated certain design choices, explaining why you made them. Ensure you allocate sufficient time and energy to writing a README.md that documents your project thoroughly. Be proud of it! A README.md in the neighborhood of 500 words is likely to be sufficient for describing your project and all aspects of its functionality. If unable to reach that threshold, that probably means your project is insufficiently complex.)
+
+Execute the submit50 command below from within your ~/project director (or whichever directory contains README.md and the project's code, which will also be submitted)
+If your project does not meet all requirements above, it may be reject, so be sure you have satisfied all of the bullet points atop this specificationand written
+a thorough README:
+
+[submit50 cs50/problems/2022/python/project]
