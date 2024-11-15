@@ -3,7 +3,7 @@ Source code for the final project in Harvard's CS50P
 
 1) What will your software do?  What features will it have?  How will it be executed?
 
-    Answer: The aim of this project is to write a simple CLI-based game where the user has 60 seconds to guess the right number between 1 and 100, which will be a whole number.  The game will feature a running timer that will be shown in the console, where the countdown will be shown consistently in its own timer box.  Guesses will be taken in from the user until the timer ticks down to zero, and each guess will be given a feedback message indicating whether their guess was too high or too low.  There will be various levels of difficulty where time progresses faster as the difficulty scales up as opposed to simply reducing time overall, as this would give me a chance to play around with time stretching to create a more thrilling or perhaps anxiety-inducing experience as the player interacts with the game.
+    Answer: The aim of the project will be to create a game of Rock, Paper, Scissors that uses more than just the basic output of the command line interface to play the game.  I will be using the figlet library to create more visually interesting interface, and I will look into ways of creating a persistent border within the CLI that the game will be played inside of.  Additional features include the ability to determine a set number of games to play, the option to play until a "best of n" number of games are played, as well as a rolling score counter.
 
 2) What new skills will you need to acquire?  What topics will you need to research?
     
