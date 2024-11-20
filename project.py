@@ -15,10 +15,9 @@ def gauntlet(count):
     comp_score: 0
     count = count
     print(f"We'll now play {count} games!")
-
+#TODO: Fix the endless loop
     i = 0
     while i < count:
-        game()
         if game() == 1:
             usr_score += 1
         elif game() == 2:
