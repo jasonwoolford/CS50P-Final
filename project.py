@@ -65,6 +65,7 @@ def game():
         return 2
     elif cpu_move == 3 and usr_move == 2:
         print("Scissors beats paper!  The computer wins this round!")
+        return 2
 
 '''
 def func3():
