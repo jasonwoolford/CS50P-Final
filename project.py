@@ -7,7 +7,7 @@ def main():
     f = Figlet(font='slant')
     print(f.renderText('Rock, Paper, Scissors!'))
     name = input("Hello!  Welcome to Rock, Paper, Scissors!  We'll be keeping score, so what's your name? ")
-    count = input(f"Good luck, {name}!  How many games would you like to play?")
+    count = int(input(f"Good luck, {name}!  How many games would you like to play?"))
     gauntlet(count)
 
 def gauntlet(count):
@@ -31,16 +31,21 @@ def gauntlet(count):
     
 
 def game():
-    usr_move = input("Select your move: Rock, Paper, or Scissors: ").lower().strip()
-    if usr_move == "rock":
-        usr_move == 1
-    elif usr_move == "paper":
-        usr_move == 2
-    elif usr_move == "scissors":
-        usr_move == 3
-    else:
-        raise ValueError("Try again, and please type either rock, paper, or scissors")
-        continue
+    while True:
+        try:
+            usr_move = input("Select your move: Rock, Paper, or Scissors: ").lower().strip()
+
+            if usr_move == "rock":
+                usr_move == 1
+            elif usr_move == "paper":
+                usr_move == 2
+            elif usr_move == "scissors":
+                usr_move == 3
+            else:
+                raise ValueError
+        except ValueError:
+            print("Try that again, and please choose rock, paper, or scissors")
+            continue
 
     cpu_move = random.randrange(1,3)
     
