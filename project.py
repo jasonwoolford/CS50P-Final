@@ -32,15 +32,15 @@ def gauntlet(count):
 
 def game():
     usr_move = input("Select your move: Rock, Paper, or Scissors: ").lower().strip()
-        if usr_move == "rock":
-            usr_move == 1
-        elif usr_move == "paper":
-            usr_move == 2
-        elif usr_move == "scissors":
-            usr_move == 3
-        else:
-            raise ValueError("Try again, and please type either rock, paper, or scissors")
-            continue
+    if usr_move == "rock":
+        usr_move == 1
+    elif usr_move == "paper":
+        usr_move == 2
+    elif usr_move == "scissors":
+        usr_move == 3
+    else:
+        raise ValueError("Try again, and please type either rock, paper, or scissors")
+        continue
 
     cpu_move = random.randrange(1,3)
     
