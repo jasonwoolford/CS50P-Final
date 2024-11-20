@@ -20,14 +20,14 @@ def gauntlet(count):
     while i < count:
         game()
         if game() == 1:
-            user_score += 1
+            usr_score += 1
         elif game() == 2:
             comp_score += 1
         else:
             continue
     
     if i == count:
-        finish(user_score, comp_score)
+        finish(name, usr_score, comp_score)
     
 
 def game():
@@ -40,7 +40,7 @@ def game():
             usr_move == 3
         else:
             raise ValueError("Try again, and please type either rock, paper, or scissors")
-            game()
+            continue
 
     cpu_move = random.randrange(1,3)
     
@@ -67,9 +67,23 @@ def game():
         print("Scissors beats paper!  The computer wins this round!")
         return 2
 
-'''
-def func3():
-    ...
-'''
+
+def finish(name, usr_score, cpu_score):
+    print("FINISH!")
+
+    if usr_score > cpu_score:
+        print(f"Congratulations, {name}, you win with a score of {usr_score}, overtaking the computer who scored in at {cpu_score}")
+    elif usr_score < cpu_score:
+        print(f"The computer wins the game with a score of {cpu_score}.  You score {usr_score}, better luck next time!")
+    else:
+        print(f"Both you and the computer scored {usr_score}.  It's a tie!")
+
+    decide = input("Would you like to try again? ").lower().strip()
+
+    if decide == "yes":
+        main()
+    else:
+        print(f"Final scores: {name} : {usr_score}, CPU: {cpu_score}")
+
 
 main()
