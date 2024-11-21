@@ -13,53 +13,48 @@ def main():
 def gauntlet(count):
     count = count
     print(f"We'll now play {count} games!")
-    
+    i = 0
     user_score: 0
     comp_score: 0
-    
-    while True:
-        try:
-            usr_move = input("Select your move: Rock, Paper, or Scissors: ").lower().strip()
 
-            if usr_move == "rock":
-                usr_move == 1
-            elif usr_move == "paper":
-                usr_move == 2
-            elif usr_move == "scissors":
-                usr_move == 3
-            else:
-                raise ValueError
-        except ValueError:
-            print("Try that again, and please choose rock, paper, or scissors")
-            continue
+    while i < count:
+        while True:
+            try:
+                usr_move = input("Select your move: Rock, Paper, or Scissors: ").lower().strip()
 
-    cpu_move = random.randrange(1,3)
-    
+                if usr_move == "rock":
+                    usr_move == 1
+                elif usr_move == "paper":
+                    usr_move == 2
+                elif usr_move == "scissors":
+                    usr_move == 3
+                else:
+                    raise ValueError
 
-    if usr_move == 1 and cpu_move == 3:
-        print("Rock beats scissors!  You win the round!")
-        user_score += 1
-    elif usr_move == 2 and cpu_move == 1:
-        print("Paper beats rock!  You win the round!")
-        user_score += 1
-    elif usr_move == 3 and cpu_move == 2:
-        print("Scissors beats paper!  You win the round!")
-        user_score += 1
-    elif usr_move == cpu_move:
-        print("Draw!  Neither player scores this round!")
-    elif cpu_move == 1 and usr_move == 3:
-        print("Rock beats scissors!  The computer wins this round!")
-        comp_score += 1
-    elif cpu_move == 2 and usr_move == 1:
-        print("Paper beats rock!  The computer wins this round!")
-        comp_score += 1
-    elif cpu_move == 3 and usr_move == 2:
-        print("Scissors beats paper!  The computer wins this round!")
-        comp_score += 1
-    
+                cpu_move = random.randrange(1,3)
+                
 
-def game():
-    ...
+                if usr_move == 1 and cpu_move == 3:
+                    print("Rock beats scissors!  You win the round!")
+                    user_score += 1
+                elif usr_move == 2 and cpu_move == 1:
+                    print("Paper beats rock!  You win the round!")
+                    user_score += 1
+                elif usr_move == 3 and cpu_move == 2:
+                    print("Scissors beats paper!  You win the round!")
+                    user_score += 1
+                elif usr_move == cpu_move:
+                    print("Draw!  Neither player scores this round!")
+                elif cpu_move == 1 and usr_move == 3:
+                    print("Rock beats scissors!  The computer wins this round!")
+                    comp_score += 1
+                elif cpu_move == 2 and usr_move == 1:
+                    print("Paper beats rock!  The computer wins this round!")
+                    comp_score += 1
+                elif cpu_move == 3 and usr_move == 2:
+                    print("Scissors beats paper!  The computer wins this round!")
+                    comp_score += 1
+
 
 
 def finish(name, usr_score, cpu_score):
