@@ -11,25 +11,12 @@ def main():
     gauntlet(count)
 
 def gauntlet(count):
-    user_score: 0
-    comp_score: 0
     count = count
     print(f"We'll now play {count} games!")
-#TODO: Fix the endless loop
-    i = 0
-    while i < count:
-        if game() == 1:
-            usr_score += 1
-        elif game() == 2:
-            comp_score += 1
-        else:
-            continue
     
-    if i == count:
-        finish(name, usr_score, comp_score)
+    user_score: 0
+    comp_score: 0
     
-
-def game():
     while True:
         try:
             usr_move = input("Select your move: Rock, Paper, or Scissors: ").lower().strip()
@@ -51,25 +38,28 @@ def game():
 
     if usr_move == 1 and cpu_move == 3:
         print("Rock beats scissors!  You win the round!")
-        return 1
+        user_score += 1
     elif usr_move == 2 and cpu_move == 1:
         print("Paper beats rock!  You win the round!")
-        return 1
+        user_score += 1
     elif usr_move == 3 and cpu_move == 2:
         print("Scissors beats paper!  You win the round!")
-        return 1
+        user_score += 1
     elif usr_move == cpu_move:
         print("Draw!  Neither player scores this round!")
-        return 3
     elif cpu_move == 1 and usr_move == 3:
         print("Rock beats scissors!  The computer wins this round!")
-        return 2 
+        comp_score += 1
     elif cpu_move == 2 and usr_move == 1:
         print("Paper beats rock!  The computer wins this round!")
-        return 2
+        comp_score += 1
     elif cpu_move == 3 and usr_move == 2:
         print("Scissors beats paper!  The computer wins this round!")
-        return 2
+        comp_score += 1
+    
+
+def game():
+    ...
 
 
 def finish(name, usr_score, cpu_score):
