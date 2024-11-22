@@ -17,31 +17,28 @@ def gauntlet(count):
     print(f"We'll now play {count} games!")
     i = 0
 
-    while i < count:
-        while True:
-            try:
-                usr_move = input("Select your move: Rock, Paper, or Scissors: ").lower().strip()
+    while i < count:    
+        usr_move = input("Select your move: Rock, Paper, or Scissors: ").lower().strip()
 
-                if usr_move == "rock":
-                    usr_move == 1
-                elif usr_move == "paper":
-                    usr_move == 2
-                elif usr_move == "scissors":
-                    usr_move == 3
-                else:
-                    raise ValueError
+        if usr_move == "rock":
+            usr_move == 1
+        elif usr_move == "paper":
+            usr_move == 2
+        elif usr_move == "scissors":
+            usr_move == 3
+        else:
+            raise ValueError("Try that again, and please choose rock, paper, or scissors")
 
-                cpu_move = random.randrange(1,3)
-                compare(usr_move,cpu_move)
+        cpu_move = random.randrange(1,3)
 
-                if compare() == 1:
-                    user_score += 1
-                elif compare() == 2:
-                    comp_score += 1
-                
-            except ValueError:
-                print("Try that again, and please choose rock, paper, or scissors")
-                continue
+        compare(usr_move,cpu_move)
+
+        if compare(usr_move, cpu_move) == 1:
+            user_score += 1
+        elif compare(usr_move, cpu_move) == 2:
+            comp_score += 1
+                    
+        i += 1
 
 def compare(usr_move, cpu_move):
     usr_move = usr_move
