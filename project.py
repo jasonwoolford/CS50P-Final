@@ -8,15 +8,15 @@ def main():
     print(f.renderText('Rock, Paper, Scissors!'))
     name = input("Hello!  Welcome to Rock, Paper, Scissors!  We'll be keeping score, so what's your name? ")
     count = int(input(f"Good luck, {name}!  How many games would you like to play? "))
-    user_score, comp_score = gauntlet(count)
+    gauntlet(count)
+    user_score = 0
+    comp_score = 0
+
     finish(name, user_score, comp_score)
 
 def gauntlet(count):
-    user_score: 0
-    comp_score: 0
     count = count
     print(f"We'll now play {count} games!")
-    i = 0
 
     for _ in range(count):    
         usr_move = input("Select your move: Rock, Paper, or Scissors: ").lower().strip()
@@ -31,15 +31,15 @@ def gauntlet(count):
             raise ValueError("Try that again, and please choose rock, paper, or scissors")
 
         cpu_move = random.randrange(1,4)
+        print(cpu_move)
 
         result = compare(usr_move,cpu_move)
 
         if result == 1:
-            user_score += 1
+            return user_score + 1
         elif result == 2:
-            comp_score += 1
+            return comp_score + 1
                     
-        i += 1
 
 def compare(usr_move,cpu_move):
 
@@ -72,7 +72,7 @@ def finish(name, usr_score, cpu_score):
     if usr_score > cpu_score:
         print(f"Congratulations, {name}, you win with a score of {usr_score}, overtaking the computer who scored in at {cpu_score}")
     elif usr_score < cpu_score:
-        print(f"The computer wins the game with a score of {cpu_score}.  You score {usr_score}, better luck next time!")
+        print(f"The computer wins the game with a score of {cpu_score}.  You scored {usr_score} wins, better luck next time!")
     else:
         print(f"Both you and the computer scored {usr_score}.  It's a tie!")
 
