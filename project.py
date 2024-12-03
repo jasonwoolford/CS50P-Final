@@ -8,11 +8,9 @@ def main():
     print(f.renderText('Rock, Paper, Scissors!'))
     name = input("Hello!  Welcome to Rock, Paper, Scissors!  We'll be keeping score, so what's your name? ")
     count = int(input(f"Good luck, {name}!  How many games would you like to play? "))
-    gauntlet(count)
-    user_score = 0
-    comp_score = 0
-
-    finish(name, user_score, comp_score)
+    scores = [0,0]
+    gauntlet(count, scores)
+    finish(name, scores[0], scores[1])
 
 def gauntlet(count):
     count = count
@@ -33,37 +31,33 @@ def gauntlet(count):
         cpu_move = random.randrange(1,4)
         print(cpu_move)
 
-        result = compare(usr_move,cpu_move)
+        compare(usr_move,cpu_move)
+    
 
-        if result == 1:
-            return user_score + 1
-        elif result == 2:
-            return comp_score + 1
                     
 
 def compare(usr_move,cpu_move):
 
     if usr_move == 1 and cpu_move == 3:
         print("Rock beats scissors!  You win the round!")
-        return 1
+        usr_score += 1
     elif usr_move == 2 and cpu_move == 1:
         print("Paper beats rock!  You win the round!")
-        return 1
+        usr_score += 1
     elif usr_move == 3 and cpu_move == 2:
         print("Scissors beats paper!  You win the round!")
-        return 1
+        usr_score += 1
     elif usr_move == cpu_move:
         print("Draw!  Neither player scores this round!")
-        return 3
     elif cpu_move == 1 and usr_move == 3:
         print("Rock beats scissors!  The computer wins this round!")
-        return 2
+        cpu_score += 1
     elif cpu_move == 2 and usr_move == 1:
         print("Paper beats rock!  The computer wins this round!")
-        return 2
+        cpu_score += 1
     elif cpu_move == 3 and usr_move == 2:
         print("Scissors beats paper!  The computer wins this round!")
-        return 2
+        cpu_score += 1
     
 
 def finish(name, usr_score, cpu_score):
