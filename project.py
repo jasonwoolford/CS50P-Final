@@ -8,7 +8,8 @@ def main():
     print(f.renderText('Rock, Paper, Scissors!'))
     name = input("Hello!  Welcome to Rock, Paper, Scissors!  We'll be keeping score, so what's your name? ")
     count = int(input(f"Good luck, {name}!  How many games would you like to play? "))
-    scores = [0,0]
+    usr_score = 0
+    cpu_score = 0
     gauntlet(count, scores)
     finish(name, scores[0], scores[1])
 
