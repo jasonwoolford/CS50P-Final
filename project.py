@@ -11,7 +11,7 @@ def main():
     usr_score = 0
     cpu_score = 0
     gauntlet(count, scores)
-    finish(name, scores[0], scores[1])
+    finish(name, usr_score, cpu_score)
 
 def gauntlet(count):
     count = count
@@ -32,12 +32,12 @@ def gauntlet(count):
         cpu_move = random.randrange(1,4)
         print(cpu_move)
 
-        compare(usr_move,cpu_move)
+        compare(usr_move,cpu_move, usr_score, cpu_score)
     
 
                     
 
-def compare(usr_move,cpu_move):
+def compare(usr_move,cpu_move,usr_score,cpu_score):
 
     if usr_move == 1 and cpu_move == 3:
         print("Rock beats scissors!  You win the round!")
