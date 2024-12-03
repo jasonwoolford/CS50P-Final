@@ -8,7 +8,8 @@ def main():
     print(f.renderText('Rock, Paper, Scissors!'))
     name = input("Hello!  Welcome to Rock, Paper, Scissors!  We'll be keeping score, so what's your name? ")
     count = int(input(f"Good luck, {name}!  How many games would you like to play? "))
-    gauntlet(count)
+    user_score, comp_score = gauntlet(count)
+    finish(name, user_score, comp_score)
 
 def gauntlet(count):
     user_score: 0
@@ -17,7 +18,7 @@ def gauntlet(count):
     print(f"We'll now play {count} games!")
     i = 0
 
-    while i < count:    
+    for _ in range(count):    
         usr_move = input("Select your move: Rock, Paper, or Scissors: ").lower().strip()
 
         if usr_move == "rock":
@@ -29,20 +30,18 @@ def gauntlet(count):
         else:
             raise ValueError("Try that again, and please choose rock, paper, or scissors")
 
-        cpu_move = random.randrange(1,3)
+        cpu_move = random.randrange(1,4)
 
-        compare(usr_move,cpu_move)
+        result = compare(usr_move,cpu_move)
 
-        if compare(usr_move, cpu_move) == 1:
+        if result == 1:
             user_score += 1
-        elif compare(usr_move, cpu_move) == 2:
+        elif result == 2:
             comp_score += 1
                     
         i += 1
 
-def compare(usr_move, cpu_move):
-    usr_move = usr_move
-    cpu_move = cpu_move
+def compare(usr_move,cpu_move):
 
     if usr_move == 1 and cpu_move == 3:
         print("Rock beats scissors!  You win the round!")
