@@ -26,5 +26,28 @@ def gauntlet(count, scores):
         
         cpu_move = random.choice(["rock","paper","scissors"])
         print(f"Computer chose: {cpu_move}")
-        
+
+        result = compare(usr_move,cpu_move)
+        if result == 1:
+            usr_score += 1
+            print(f"{usr_move} beats {cpu_move}, you win this round!")
+        elif result == -1:
+            cpu_score += 1
+            print(f"{cpu_move} beats {usr_move}, the computer wins this round!")
+        else:
+            print(f"You both played {usr_move}, this round is a tie!")
+
+    scores[0] = usr_score
+    scores[1] = cpu_score
+
+def compares(usr_move, cpu_move):
+    if usr_move == cpu_move:
+        return 0
+    elif (usr_move == "rock" and cpu_move == "scissors") or \
+         (usr_move == "paper" and cpu_move == "rock") or \
+         (usr_move == "scissors" and cpu_move == "paper"):
+         return 1
+    else:
+        return -1
+
 main()
