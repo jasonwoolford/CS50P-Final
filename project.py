@@ -50,4 +50,13 @@ def compare(usr_move, cpu_move):
     else:
         return -1
 
+def finish(name, usr_score, cpu_score):
+    print("FINISH!")
+    if usr_score > cpu_score:
+        print(f"Nice! {name} beats the computer with a score of {usr_score} over the computer's score of {cpu_score}!")
+    elif usr_score < cpu_score:
+        print(f"The computer wins the game with a score of {cpu_score}.  You scored {usr_score} winning rounds.  Better luck next time!")
+    else:
+        print(f"It's a tie!  Both {name} and the computer scored {usr_score}.")
+
 main()
