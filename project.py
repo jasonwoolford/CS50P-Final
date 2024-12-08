@@ -12,5 +12,19 @@ def main():
     gauntlet(count, scores) #Call upon gauntlet to run the user-specified number of rounds
     finish(name, scores[0], scores[1])
 
+def gauntlet(count, scores):
+    usr_score = scores[0]
+    cpu_score = scores[1]
+    print(f"We'll now play {count} games!")
 
+    for _ in range(count):
+        usr_move = input("Select your move: Rock, Paper, or Scissors: ").lower().strip()
+
+        #Handles unacceptable inputs
+        if usr_move not in ["rock","paper","scissors"]:
+            raise ValueError("Try that again, and please choose rock, paper, or scissors!")
+        
+        cpu_move = random.choice(["rock","paper","scissors"])
+        print(f"Computer chose: {cpu_move}")
+        
 main()
