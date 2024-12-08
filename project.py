@@ -40,7 +40,7 @@ def gauntlet(count, scores):
     scores[0] = usr_score
     scores[1] = cpu_score
 
-def compares(usr_move, cpu_move):
+def compare(usr_move, cpu_move):
     if usr_move == cpu_move:
         return 0
     elif (usr_move == "rock" and cpu_move == "scissors") or \
