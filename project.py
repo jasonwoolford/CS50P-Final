@@ -12,7 +12,7 @@ def main():
     name = input("Hello!  Welcome to Rock, Paper, Scissors!  We'll be keeping score, so what's your name? ")
 
     #Get number of game rounds to play from the user
-    count = int(input(f"Good luck, {name}! How many games woudl you like to play? "))
+    count = int(input(f"Good luck, {name}! How many games would you like to play? "))
 
     scores = [0,0] #Storing scores in a list for the sake of keeping everything properly accounted for during the game.
 
@@ -39,26 +39,25 @@ def gauntlet(count, scores):
 
             except ValueError as error:
                 print(error)
-            #TODO: Fix error handling, when an error is raised, prevent the computer from making a move until the user provides valid input
                 
-            #Computer makes a randomized move after the user
-            cpu_move = random.choice(["rock","paper","scissors"])
-            print(f"Computer chose: {cpu_move}")
+        #Computer makes a randomized move after the user
+        cpu_move = random.choice(["rock","paper","scissors"])
+        print(f"Computer chose: {cpu_move}")
 
-            #Run compare() to determine the winner for the round, store the result in the result variable
-            result = compare(usr_move,cpu_move)
+        #Run compare() to determine the winner for the round, store the result in the result variable
+        result = compare(usr_move,cpu_move)
 
-            #If the user wins, add one point to usr_score, and print a confirmation message for visual feedback
-            if result == 1:
-                usr_score += 1
-                print(f"{usr_move} beats {cpu_move}, you win this round!")
-            #If the computer wins, add on point to cpu_score, and print a confrimation message for visual feedback
-            elif result == -1:
-                cpu_score += 1
-                print(f"{cpu_move} beats {usr_move}, the computer wins this round!")
-            #If both players make the same move, confirm that the round is a tie and leave the scores unaltered
-            else:
-                print(f"You both played {usr_move}, this round is a tie!")
+        #If the user wins, add one point to usr_score, and print a confirmation message for visual feedback
+        if result == 1:
+            usr_score += 1
+            print(f"{usr_move} beats {cpu_move}, you win this round!")
+        #If the computer wins, add on point to cpu_score, and print a confrimation message for visual feedback
+        elif result == -1:
+            cpu_score += 1
+            print(f"{cpu_move} beats {usr_move}, the computer wins this round!")
+        #If both players make the same move, confirm that the round is a tie and leave the scores unaltered
+        else:
+            print(f"You both played {usr_move}, this round is a tie!")
 
     scores[0] = usr_score
     scores[1] = cpu_score
