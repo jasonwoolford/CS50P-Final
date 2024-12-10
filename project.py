@@ -50,11 +50,11 @@ def gauntlet(count, scores):
         #If the user wins, add one point to usr_score, and print a confirmation message for visual feedback
         if result == 1:
             usr_score += 1
-            print(f"{usr_move} beats {cpu_move}, you win this round!")
+            print(f"{usr_move.capitalize()} beats {cpu_move}, you win this round!")
         #If the computer wins, add on point to cpu_score, and print a confrimation message for visual feedback
         elif result == -1:
             cpu_score += 1
-            print(f"{cpu_move} beats {usr_move}, the computer wins this round!")
+            print(f"{cpu_move.capitalize()} beats {usr_move}, the computer wins this round!")
         #If both players make the same move, confirm that the round is a tie and leave the scores unaltered
         else:
             print(f"You both played {usr_move}, this round is a tie!")
