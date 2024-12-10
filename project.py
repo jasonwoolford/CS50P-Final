@@ -1,6 +1,7 @@
 #CS50P Final Project - Jason Woolford
 
 from pyfiglet import Figlet
+from os import get_terminal_size
 import random
 
 def main():
@@ -20,6 +21,28 @@ def main():
 
     finish(name, scores[0], scores[1]) #Once the number of rounds are finished, call upon finish() to call the winner of the game
 
+def print_game_border(content): #Function for printing a border in the terminal that the entirety of the game will exist within visually
+    #Get terminal width
+    term_width = get_terminal_size().columns
+
+    #Find maximum width of printed game content
+    max_length = max(len(line) for line in game_content)
+
+    #Adjust border width to be as wide as the longest line, with some additional padding added on
+    border_width = max(max_length, 8) + 2 #Padding
+
+    #Top and bottom border lines
+    top_border = '+' + '-' * (border_width - 2) + '+'
+    bottom_border = '+' + '-' * (border_width - 2) + '+'
+
+    #Printing the borders and game content
+    print(top_border)
+    for line in content:
+        #Center each line within the border's width and padding
+        centered_line = f'| {line.center(border_width - 4)} |'
+        print(centered_line)
+    print(bottom_border)
+    
 def gauntlet(count, scores):
     usr_score = scores[0]
     cpu_score = scores[1]
