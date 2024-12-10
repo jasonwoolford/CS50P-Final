@@ -5,7 +5,7 @@ import random
 
 def main():
     #Initialize the Figlet library with f, then print the game title with it
-    f = Figlet(font='slant')
+    f = Figlet(font='small')
     print(f.renderText('Rock, Paper, Scissors!'))
 
     #Get user's name for the sake of score keeping
