@@ -1,4 +1,3 @@
 #This file is for placing our necessary pip libraries, which will be labeled one library per line
 
 pip install pyfiglet
-pip install colorama
