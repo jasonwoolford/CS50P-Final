@@ -3,6 +3,7 @@
 from pyfiglet import Figlet
 from os import get_terminal_size
 import random
+import colorama
 
 def main():
     #Initialize the Figlet library with f, then print the game title with it
