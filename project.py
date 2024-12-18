@@ -8,10 +8,11 @@ import colorama
 def main():
     #Initialize colorama
     colorama.init()
-    
+
     #Initialize the Figlet library with f, then print the game title with it
-    f = Figlet(font='small')
-    print((f.renderText('Rock, Paper, Scissors!')))
+    f = Figlet(font='slant')
+    colored_title = (colorama.Fore.RED + f.renderText('Rock, ') + colorama.Fore.WHITE + f.renderText('Paper, ') + colorama.Fore.BLUE + f.renderText('Scissors!') + colorama.Style.RESET_ALL)
+    print(colored_title)
 
     #Get user's name for the sake of score keeping
     name = input("Hello!  Welcome to Rock, Paper, Scissors!  We'll be keeping score, so what's your name? ")
