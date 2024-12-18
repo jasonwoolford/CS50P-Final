@@ -35,8 +35,18 @@ def main():
     color_cpu = getattr(colorama.Fore, cpu_color_selector.upper())
 
     #Get number of game rounds to play from the user
-    count = int(input(f"Good luck, {name}! How many games would you like to play? "))
+    while True:
+        try:
+            count = input(f"Good luck, {name}! How many games would you like to play? ")
+            count = int(count) #Converting count into an int for the sake of handling an endless exception loop observed in manual testing within the terminal
 
+            if count < 1:
+                raise ValueError("Please use a positive integer to determine round count, try again now! :) ")
+            break
+
+        except ValueError as int_fail:
+            print(int_fail)
+        
     scores = [0,0] #Storing scores in a list for the sake of keeping everything properly accounted for during the game.
 
     gauntlet(count, scores, usr_color, color_name, color_cpu, name) #Call upon gauntlet to run the user-specified number of rounds
