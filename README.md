@@ -1,19 +1,19 @@
-# CS50P-Final
-Source code for the final project in Harvard's CS50P 
+# Rock, Paper, Scissors (CS50P- Final Project - Jason Woolford)
 
-1) What will your software do?  What features will it have?  How will it be executed?
+#### Video Demo: {to be inserted here}
+#### Description:
+A classic game brought to the terminal with a focus on clean interfaces and clear communication regarding moves from the computer, as well as integretating stylized color schemes for players, and certain messages with the use of Colorama and Figlet.  
 
-    Answer: The aim of the project will be to create a game of Rock, Paper, Scissors that uses more than just the basic output of the command line interface to play the game.  I will be using the figlet library to create more visually interesting interface, and I will look into ways of creating a persistent border within the CLI that the game will be played inside of.  Additional features include the ability to determine a set number of games to play, the option to play until a "best of n" number of games are played, as well as a rolling score counter.
+Each game is first set up by establish a name and color to define the user against the CPU, as well as an integer value from the user to determine the number of rounds to be played.  As the user plays, they are met with a reguarly updating interface that keeps a running count of each player's scores, and a clean interface to read messages on.
 
-2) What new skills will you need to acquire?  What topics will you need to research?
-    
-    Answer: I'll have to figure out how to use the terminal in such a way that I can generate a realtime game within it, as well as the understanding of how to make such a thing happen without breaking everything along the way, but, this was the same for me during the rest of the course as well! :P
+Every submitted move from the user is met with a randomized selection from the computer, who's move will then be telegraphed to the user following their own move, for the sake of visibility over the computer's behavior and to show that the computer does in fact choose moves without a clear pattern, which can be observed in longer games.  As rounds are played, both the user's move and the computer's move will be compared against one another with a number of corresponding messages to confirm which player wins each round based on the outcome of the comparisons.  As this message is delivered to the user, the score for the winning player is dynamically updated while waiting for the user's next move, which is presented visually above the rest of the game, providing for an always-visible running total to show the user how they stack up against the computer during their game. 
 
-3) If working with one or two classmates, who will do what?
+As the game finishes, a final finishing message is displayed, colorized with colorama and stylized with Figlet, after which, the game will ask the player if they'd like to play again, and the user can either accept or decline the offer.  If they choose to end the game, a final breakdown of the scores is displayed, colorized and stylized, as the last message the program displays to the user.
 
-    Answer: I will be working alone and as such, I will be doing all of the work.
 
-4) In the world of software, most everything takes longer to implement than you expect.  And so it's not uncommon to accomplish less in a fixed amount
-    of time than you hope.  What might you consider to be a good outcome for your project?  A better outcome?  The best outcome?
+#### Problems Encountered, Considerations Made:
+As I worked on this project, I actually started over from scratch not realizing where I was going wrong with the actual functioning of the game for a while.  Initially, I had problems with storing scores properly and round counts properly, leading to scores never actually updating and the game going on endlessly because the values were resetting every single round.  I realized that I had placed those variables in the wrong function (initially in main) without ever passing them into the function that could properly account for them given the scope of the functions.  While Rock, Paper, Scissors is a fundamentally fairly simple game, the need to pass so many variables through one another really matters so that doing things like score-keeping and round-counting really made for a bit of a challenge initially because I didn't realize how poorly I was handling simple variables like that, and how improperly I was storing them at first.
 
-    Answer: A good outcome for me would be a functional game that is readable and conveys the proper information to the user in a way that's readable if not a bit buggy visually.  A better outcomme is to have a clean interface through the entirety of the game.   The best outcome would be to include colors for feedback messages while maintaining a clean interface with the game.  Libraries may have to be used to get a clean interface going for the game, in which case, I'll have to learn how to use them.
+Once that critical flaw was realized, it made everything else a matter of simply getting colorama and pyfiglet to work together, which did take some reading to get familiar with colorama in particular, which invovled some extra reading given that I hadn't used the colorama library before, and I had to get used to how it actually functioned, and how to keep it from coloring more text than I was trying to get it to do, which it turned out to want to do by default before I realized I had to put in a specific reset flag after a colored section if I wanted it to revert back to the default white text in the terminal, or if I wanted to transition into another color.
+
+One final consideration I also made was to abandon an intial idea of creating a square border with which the game would run inside of.  This proved to be really impractical for a game that runs in the terminal, I then tried using some of the built in os features to print borders along the upper and lower widths of the terminal windows but found that I didn't like how it looked.  Instead for the sake of creating a more pleasant interface, I just opted to use the terminal clear command which keeps the program from appearing too visually bloated as the user plays more and more rounds.
